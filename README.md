@@ -33,14 +33,14 @@ graph TD
 ## 💻 3인 담당자별 통신 명세서
 코드를 작성할 때 아래의 토픽 이름과 메시지 타입을 반드시 지켜주세요!
 
-### 1. 담당자 1: 비전/마커 저장 (`/aruco_detector`)
+### 1. 승윤: 비전/마커 저장 (`/aruco_detector`)
 * **Sub:** `/uav/camera/image_raw` (`sensor_msgs/Image`), `/mission_state` (`std_msgs/Int32`)
 * **Pub:** `/aruco/marker_pose` (`geometry_msgs/PoseStamped`)
 
-### 2. 담당자 2: UAV 비행/탐색 (`/uav_waypoint_follower`)
+### 2. 재형: UAV 비행/탐색 (`/uav_waypoint_follower`)
 * **Sub:** `/mavros/local_position/pose` (`geometry_msgs/PoseStamped`)
 * **Pub:** `/mavros/setpoint_position/local` (`geometry_msgs/PoseStamped`), `/mission_state` (`std_msgs/Int32`)
 
-### 3. 담당자 3: 정밀 착륙 (`/precision_landing`)
+### 3. 예림: 정밀 착륙 (`/precision_landing`)
 * **Sub:** `/aruco/marker_pose` (`geometry_msgs/PoseStamped`), `/mission_state` (`std_msgs/Int32`)
 * **Pub:** `/mavros/setpoint_velocity/cmd_vel` (`geometry_msgs/Twist`)
